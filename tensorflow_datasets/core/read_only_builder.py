@@ -557,7 +557,7 @@ def _get_version(
   config_dir = file_utils.get_dataset_dir(
       data_dir=data_dir, builder_name=builder_name, config_name=config_name
   )
-  all_versions = version_lib.list_all_versions(config_dir)
+  all_versions = file_utils.list_dataset_versions(dataset_config_dir=config_dir)
   # Version not given, using the latest one.
   if not requested_version and all_versions:
     return all_versions[-1]
